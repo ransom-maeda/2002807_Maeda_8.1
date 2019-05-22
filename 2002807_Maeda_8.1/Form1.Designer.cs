@@ -31,19 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.report3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.labelSize = new System.Windows.Forms.Label();
             this.sizeInput = new System.Windows.Forms.TextBox();
             this.labelCode = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.identificationInput = new System.Windows.Forms.TextBox();
             this.labelIncome = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.incomeInput = new System.Windows.Forms.TextBox();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument3 = new System.Drawing.Printing.PrintDocument();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,12 +74,48 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // enterDataToolStripMenuItem
+            // 
+            this.enterDataToolStripMenuItem.Name = "enterDataToolStripMenuItem";
+            this.enterDataToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.enterDataToolStripMenuItem.Text = "&Enter Data";
+            this.enterDataToolStripMenuItem.Click += new System.EventHandler(this.enterDataToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // reportsToolStripMenuItem
             // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.report1ToolStripMenuItem,
+            this.report2ToolStripMenuItem,
+            this.report3ToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "&Reports";
-            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
+            // 
+            // report1ToolStripMenuItem
+            // 
+            this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.report1ToolStripMenuItem.Text = "Report 1";
+            this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
+            // 
+            // report2ToolStripMenuItem
+            // 
+            this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.report2ToolStripMenuItem.Text = "Report 2";
+            // 
+            // report3ToolStripMenuItem
+            // 
+            this.report3ToolStripMenuItem.Name = "report3ToolStripMenuItem";
+            this.report3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.report3ToolStripMenuItem.Text = "Report 3";
             // 
             // helpToolStripMenuItem
             // 
@@ -83,19 +124,11 @@
             this.helpToolStripMenuItem.Text = "&Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
-            // enterDataToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.enterDataToolStripMenuItem.Name = "enterDataToolStripMenuItem";
-            this.enterDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.enterDataToolStripMenuItem.Text = "&Enter Data";
-            this.enterDataToolStripMenuItem.Click += new System.EventHandler(this.enterDataToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
+            this.toolStripMenuItem1.Text = " ";
             // 
             // printDocument1
             // 
@@ -110,12 +143,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
-            this.toolStripMenuItem1.Text = " ";
             // 
             // labelSize
             // 
@@ -142,12 +169,12 @@
             this.labelCode.TabIndex = 3;
             this.labelCode.Text = "Identification Code";
             // 
-            // textBox1
+            // identificationInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.identificationInput.Location = new System.Drawing.Point(128, 125);
+            this.identificationInput.Name = "identificationInput";
+            this.identificationInput.Size = new System.Drawing.Size(100, 20);
+            this.identificationInput.TabIndex = 4;
             // 
             // labelIncome
             // 
@@ -158,21 +185,29 @@
             this.labelIncome.TabIndex = 5;
             this.labelIncome.Text = "Yearly Income";
             // 
-            // textBox2
+            // incomeInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 158);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.incomeInput.Location = new System.Drawing.Point(128, 158);
+            this.incomeInput.Name = "incomeInput";
+            this.incomeInput.Size = new System.Drawing.Size(100, 20);
+            this.incomeInput.TabIndex = 6;
+            // 
+            // printDocument2
+            // 
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
+            // 
+            // printDocument3
+            // 
+            this.printDocument3.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument3_PrintPage);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.incomeInput);
             this.Controls.Add(this.labelIncome);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.identificationInput);
             this.Controls.Add(this.labelCode);
             this.Controls.Add(this.sizeInput);
             this.Controls.Add(this.labelSize);
@@ -201,9 +236,14 @@
         private System.Windows.Forms.Label labelSize;
         private System.Windows.Forms.TextBox sizeInput;
         private System.Windows.Forms.Label labelCode;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox identificationInput;
         private System.Windows.Forms.Label labelIncome;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox incomeInput;
+        private System.Windows.Forms.ToolStripMenuItem report1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem report2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem report3ToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Drawing.Printing.PrintDocument printDocument3;
     }
 }
 
