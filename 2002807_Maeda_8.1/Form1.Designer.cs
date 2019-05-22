@@ -110,12 +110,14 @@
             this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
             this.report2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.report2ToolStripMenuItem.Text = "Report 2";
+            this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
             // 
             // report3ToolStripMenuItem
             // 
             this.report3ToolStripMenuItem.Name = "report3ToolStripMenuItem";
             this.report3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.report3ToolStripMenuItem.Text = "Report 3";
+            this.report3ToolStripMenuItem.Click += new System.EventHandler(this.report3ToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 

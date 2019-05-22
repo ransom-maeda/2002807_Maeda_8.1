@@ -69,6 +69,7 @@ namespace _2002807_Maeda_8._1
             float column1Float = e.MarginBounds.Left;
             float yFloat = e.MarginBounds.Top;
             float column3Float = 450f;
+            float column2Float = 300f;
             string lineString;
             //title
             lineString = "Houses with higher than average income";
@@ -87,7 +88,7 @@ namespace _2002807_Maeda_8._1
             //id number
             e.Graphics.DrawString("ID Number: ",
                 headingFont, Brushes.Black,
-                column1Float, yFloat);
+                column2Float, yFloat);
 
             //income
             e.Graphics.DrawString("Income: ",
@@ -141,6 +142,18 @@ namespace _2002807_Maeda_8._1
                 Brushes.Black, column1Float,
                 yFloat);
             yFloat += (lineHeightFloat * 3);
+        }
+
+        private void report2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument2;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void report3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument3;
+            printPreviewDialog1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
